@@ -1,0 +1,468 @@
+:root {
+  --main-color: #FF9800;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: auto;
+}
+/* Breakpoints */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+a{
+  text-decoration: none;
+  color: #FFF;
+}
+/* Start First Page */
+.home-page{
+  min-height: 100vh;
+  background-image: url(../imgs/01.jpg);
+  background-size: cover;
+  position: relative;
+  color: #FFF;
+}
+.home-page .overlay{
+  position: absolute;
+  background-color: rgba(0, 0, 0, .6);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+.container .home-page-header{
+  color: #FFF;
+  display: flex;
+  padding: 10px;
+  z-index: 1050;
+  position: relative;
+}
+.container .logo{
+  padding:15px;
+  width: 300px;
+  font-weight: bold;
+}
+.container ul {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  align-items: center;
+}
+.container ul li{
+  margin-left: 10px;
+  padding: 5px;
+}
+.container ul li a{
+  transition: .3s;
+}
+.container ul li a:hover{
+  color: var(--main-color);
+}
+.home-page .main-text{
+  z-index: 1000;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  text-align: center;
+}
+.home-page .main-text h1 {
+  font-size: 34px;
+  margin: 0 0 12px;
+}
+.home-page .main-text h1 span {
+  color: var(--main-color);
+}
+.home-page .main-text p {
+  line-height: 1.6;
+  font-size: 20px;
+  margin: 0;
+}
+/* Start bullets */
+.bullets{
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  position: fixed;
+  z-index: 999;
+  width: 40px;
+  z-index: 1001;
+}
+.bullets .bullet{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3px solid var(--main-color);
+  cursor: pointer;
+  position: relative;
+  margin: 20px auto;
+}
+.bullets .bullet:hover::before{
+  content: '';
+  height: 0;
+  width: 0;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 10px solid;
+  border-color: transparent transparent transparent var(--main-color);
+}
+.bullets .bullet:hover::after{
+  content: 'About Us';
+  width: 120px;
+  background-color: var(--main-color);
+  position: absolute;
+  right: 31px;
+  top: -10px;
+  color: #FFF;
+  padding: 8px 10px;
+  border-radius: 6px;
+  text-align: center;
+}
+.bullets .bullet.two:hover::after{
+  content: 'Our Skills';
+}
+.bullets .bullet.three:hover::after{
+  content: 'Our Gallery';
+}
+.bullets .bullet.four:hover::after{
+  content: 'Timeline';
+}
+.bullets .bullet.five:hover::after{
+  content: 'Features';
+}
+.bullets .bullet.six:hover::after{
+  content: 'Testimonials';
+}
+/* End First Page */
+/* Start Settings Box */
+.setting-box{
+  position: fixed;
+  background-color: #fff;
+  width: 200px;
+  left: -200px;
+  top: 0;
+  z-index: 10000;
+  min-height: 100vh;
+  transition: .3s;
+}
+.setting-box.open{
+  left: 0;
+}
+.setting-box .icon-gear{
+  width: 30px;
+  padding: 8px;
+  font-size: 20px;
+  background-color: #fff;
+  position: absolute;
+  top: 100px;
+  right: -30px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.settings-container .option{
+  color: #666;
+  font-size: 14px;
+  padding: 10px;
+  text-align: center;
+  background-color: #EEE;
+  margin: 10px;
+}
+
+.settings-container .option.colors h3{
+  margin: 0;
+}
+.settings-container .option.colors ul{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+.settings-container .option.colors li{
+  width: 24px;
+  height: 24px;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  border: 3px solid #EEE;
+  opacity: 0.5;
+}
+.settings-container .option.colors li:first-child{
+  background-color:#FF9800 ;
+}
+.settings-container .option.colors li:nth-child(2){
+  background-color:#E91E63;
+}
+.settings-container .option.colors li:nth-child(3){
+  background-color:#009688;
+}
+.settings-container .option.colors li:nth-child(4){
+  background-color:#03A9F4;
+}
+.settings-container .option.colors li:nth-child(5){
+  background-color:#4CAF50;
+}
+.settings-container .option.colors li.active{
+  border-color: #fff;
+  opacity: 1;
+}
+.settings-container .option.background h4{
+  margin: 0;
+}
+.settings-container .option span{
+  width: 50px;
+  background-color: var(--main-color);
+    color: #FFF;
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 12px;
+    padding: 4px 10px;
+    font-weight: bold;
+    border-radius: 4px;
+    opacity: .5;
+    cursor: pointer;
+}
+.settings-container .option span.active {
+  opacity: 1;
+}
+.settings-container .reset-option{
+  background-color: #F44336;
+  border: none;
+  display: block;
+  color: #FFF;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 10px auto;
+  width: 178px;
+}
+/* End Settings Box */
+
+/* Start About Us */
+.container .about{
+  display: flex;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.container .about .text{
+  flex: 1;
+  padding: 30px;
+}
+.container .about .text h1{
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--main-color);
+  margin: 0 0 10px;
+}
+.container .about .text p{
+  line-height: 1.8;
+  color: #767676;
+  margin: 0;
+}
+.container .about .image {
+  flex: 1;
+  text-align: center;
+}
+.container .about .image img{
+  width: 250px;
+  border-style: noen;
+}
+/* End About Us */
+/* start skills */
+.section{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #eee;
+}
+.section h1{
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--main-color);
+  margin: 0 0 10px;
+  text-align: center;
+}
+.skills .skill-box{
+  background-color: #FFF;
+  display: flex;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+.skills .skill-box .skill-name{
+  font-weight: bold;
+  width: 140px;
+  text-align: center;
+  line-height: 30px;
+}
+.skills .skill-box .skill-progress{
+  height: 30px;
+  width: 100%;
+  background-color: #f6f6f6;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+.skills .skill-box .skill-progress span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--main-color);
+  transition: all 0.5s;
+}
+
+/* end skills */
+
+/* Our Gallery */
+.gallery.section{
+  background-color: #FFF;
+}
+.gallery h1{
+  margin-bottom: 50px;
+}
+.gallery .imgs-box{
+  text-align: center;
+}
+.gallery .imgs-box img{
+  width: 200px;
+  padding: 3px;
+  background-color: #F6F6F6;
+  border: 1px solid #CCC;
+  margin: 5px;
+  cursor: pointer;
+}
+.imgs-overlay{
+  background-color: rgba(0, 0, 0, .6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+.image-box{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  z-index: 1001;
+}
+.image-box img{
+  width: 100%;
+}
+.image-box h3{
+  font-weight: bold;
+  text-align: center;
+  margin: 0 0 20px;
+  color: var(--main-color);
+}
+.closeX{
+  border-radius: 50%;
+  background-color: var(--main-color);
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  color: #FFF;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: Arial, Tahoma;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 576px) { /* Small Devices => Landscape Phones */
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) { /* Medium Devices => Tablets */
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) { /* Desktops */
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) { /* Large Screens */
+  .container {
+    max-width: 1140px;
+  }
+}
+/* End Grid System */
