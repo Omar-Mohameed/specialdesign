@@ -419,13 +419,95 @@ a{
   justify-content: center;
   align-items: center;
 }
-
-
-
-
-
-
-
+/* Start Time Line */
+.timeline-details{
+  position: relative;
+  overflow: hidden;
+}
+.timeline-details::before{
+  content: " ";
+  width: 2px;
+  height: 100%;
+  margin-left: -1px;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  background-color: var(--main-color);
+}
+.timeline-details .year{
+  width: 50px;
+  background-color: var(--main-color);
+  padding: 2px 5px;
+  font-weight: bold;
+  margin: 20px auto;
+  color: #fff;
+  border-radius: 4px;
+  position: relative;
+  text-align: center;
+}
+.timeline-details .left,
+.timeline-details .right{
+  width: calc(50% - 25px);
+  margin-bottom: 40px;
+  position: relative;
+}
+.timeline-details .left{
+  float: left;
+}
+.timeline-details .right{
+  float: right;
+}
+.timeline-details .left::before,
+.timeline-details .right::before{
+  content: " ";
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 3px solid var(--main-color);
+  background-color: #FFF;
+  position: absolute;
+  top: 20px;
+  right: -35px;
+}
+.timeline-details .right::before{
+  left: -35px;
+}
+.left .content,
+.right .content{
+  padding: 20px;
+  background-color: #FFF;
+}
+.left .content::before,
+.right .content::before{
+  content: " ";
+  border: 10px solid;
+  border-color: transparent transparent transparent #FFF;
+  height: 0;
+  width: 0;
+  position: absolute;
+  right: -20px;
+  top: 20px;
+}
+.right .content::before{
+  left: -20px;
+  border-color: transparent #FFF transparent transparent;
+}
+.left .content h3,
+.right .content h3{
+  font-weight: bold;
+  color: var(--main-color);
+  margin: 0 0 10px;
+}
+.left .content p,
+.right .content p{
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+}
+/* remove float */
+.clearfix{
+  clear: both;
+}
 
 
 
