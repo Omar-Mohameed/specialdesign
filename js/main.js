@@ -70,8 +70,10 @@ iconGear.addEventListener('click',()=>{
 //close settings box if clicked outside of settings box
 document.addEventListener('click', function(event) {
   if (!settingsBox.contains(event.target)) {
+    if(settingsBox.classList.contains('open')) {
       settingsBox.classList.remove('open');
       document.querySelector('.setting-box .fa-gear').classList.remove('fa-spin');
+    }
   }
 });
 // Switch Color Text 
@@ -236,3 +238,28 @@ document.addEventListener("click", (e) => {
     document.querySelector(".image-box").remove();
   } 
 });
+
+
+
+// Responsive of toggle button
+let toggleButton = document.querySelector('.botton-toggle');
+let links = document.querySelector('.links-container ul');
+
+toggleButton.onclick = function(e) {
+  e.stopPropagation();
+  this.classList.toggle('menu-active');
+  links.classList.toggle('open');
+};
+// if(links.classList.contains('open')) {
+
+  document.addEventListener('click', (e)=> {
+    if(!e.target.classList.contains('open') &&links.classList.contains('open') && e.target!= toggleButton) {
+      links.classList.remove('open');
+      toggleButton.classList.remove('menu-active');
+    }
+  })
+
+// stop Propagation on menu click
+links.onclick = function(e) {
+  e.stopPropagation();
+}

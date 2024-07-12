@@ -4,6 +4,9 @@
 * {
   box-sizing: border-box;
 }
+html{
+  scroll-behavior: smooth;
+}
 body {
   font-family: 'Open Sans', sans-serif;
 }
@@ -112,6 +115,59 @@ a{
   line-height: 1.6;
   font-size: 20px;
   margin: 0;
+}
+
+.links-container .botton-toggle{
+  background: none;
+  border: none;
+  width: 40px;
+  cursor: pointer;
+  margin-top: 15px;
+  display: none;
+  position: relative;
+}
+.links-container .botton-toggle.menu-active::before {
+  content: '';
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+  position: absolute;
+  bottom: -15px;
+  left: 10px;
+}
+.links-container .botton-toggle span{
+  display: block;
+  width: 100%;
+  background-color: white;
+  height: 4px;
+  margin-bottom: 4px;
+}
+@media (max-width: 991px) {
+  .links-container ul{
+    display: none;
+  }
+  .links-container ul.open{
+    background-color: white;
+    padding: 10px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    border-radius: 4px;
+    text-align: left;
+  }
+  .links-container ul.open li a{
+    color: var(--main-color);
+    font-weight: bold;
+  }
+  .links-container ul.open li {
+    display: block;
+    margin: 10px;
+  }
+  .links-container .botton-toggle{
+    display: inline-block;
+  }
 }
 /* Start bullets */
 .bullets{
@@ -508,21 +564,6 @@ a{
 .clearfix{
   clear: both;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

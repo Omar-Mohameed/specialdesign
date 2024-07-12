@@ -11,19 +11,26 @@
 </head>
 <body>
   <!-- Start Main Page -->
-  <div class="home-page">
+  <div class="home-page" id="home">
     <div class="overlay"></div>
     <!--Start Home Page Header -->
     <div class="container">
       <div class="home-page-header">
         <div class="logo">Special Design</div>
-        <ul>
-          <li><a href="">Home</a></li>
-          <li><a href="">About</a></li>
-          <li><a href="">Services</a></li>
-          <li><a href="">Products</a></li>
-          <li><a href="">Contact</a></li>
-        </ul>
+        <div class="links-container" style="width: 100%; text-align: right;">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+          </ul>
+          <button class="botton-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
     </div>
     <!--End Home Page Header -->
@@ -81,7 +88,7 @@
 
   <!-- Start About Us -->
   <div class="container">
-    <div class="about">
+    <div class="about" id="about">
       <div class="text">
         <h1>About Us</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ipsum,
@@ -95,7 +102,7 @@
   </div>
   <!-- End About Us -->
   <!-- start our skills -->
-  <div class="skills section">
+  <div class="skills section" id="skills">
     <div class="container">
       <h1>Our Skills</h1>
       <div class="skill-box">
@@ -140,7 +147,7 @@
   <!-- end our skills -->
   
   <!-- Start Our Gallery -->
-  <div class="gallery section">
+  <div class="gallery section" id="gallery">
     <div class="container">
       <h1>Our Gallery</h1>
       <div class="imgs-box">
@@ -160,7 +167,7 @@
   <!-- End Our Gallery -->
 
   <!--Start Time Line -->
-  <div class="timeline section">
+  <div class="timeline section" id="timeline">
     <div class="container">
       <div class="timeline-details">
         <div class="year">2018</div>
